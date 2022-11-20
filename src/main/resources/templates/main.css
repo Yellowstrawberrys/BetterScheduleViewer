@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap');
+
+body {
+    background: linear-gradient(177deg, rgba(20, 136, 204, 1) 0%, rgba(43, 50, 178, 1) 100%) no-repeat;
+    min-height: 100vh;
+    margin: 0;
+}
+
+root {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: white;
+}
+
+#searchBar {
+    width: 500px;
+    height: 70px;
+}
+
+#searchBar > form {
+    background: #D3D3D3;
+    border: #D3D3D3 1px;
+    border-radius: 8px;
+    width: 500px;
+    height: 65px;
+}
+
+#searchInput {
+    border-radius: 8px 0 0 8px;
+    border: 0;
+    border: #D3D3D3;
+    background: #D3D3D3;
+    width: 78.5%;
+    padding: 16px;
+    height: 50%;
+    line-height: 2.5;
+    font-size: 25px;
+    margin: 0;
+    vertical-align: top;
+}
+
+#searchButton {
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    height: 65px;
+    background: #3EA0AB;
+    border: 1px #3EA0AB;
+    border-radius: 8px;
+}
+
+#contents {
+    width: 90%;
+    height: 40vh;
+    display:block;
+    border: 0;
+    border-radius: 8px;
+}
+
+.title {
+    margin-top: 0;
+    font-size: 30px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.text{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.center {
+    margin: 0 auto;
+}
