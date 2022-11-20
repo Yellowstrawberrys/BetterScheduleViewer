@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap');
+
 body {
     background-color: #262626;
     margin: 0;
@@ -7,7 +9,6 @@ body {
 #one {
     width: 20%;
     height: 100vh;
-    background-color: white;
 }
 #two {
     width: 8%;
@@ -17,4 +18,22 @@ body {
 #three {
     width: 72%;
     height: 100vh;
+}
+
+.time {
+    text-align: right;
+}
+
+.timeText1 {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+.timeText2 {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: #C8C8C8;
+    font-size: 20px;
+    margin: 0;
 }

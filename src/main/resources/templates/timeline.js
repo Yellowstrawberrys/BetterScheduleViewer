@@ -8,15 +8,26 @@ function init() {
     canvas = document.getElementById("two");
     ctx = canvas.getContext("2d");
 
-
     height = getDocHeight() * 2;
-    canvas.width = getDocWidth()*0.08 *2;
+    canvas.width = getDocWidth()*0.08 * 2;
     canvas.height = height;
+    schedules = document.getElementsByClassName('time').length;
+
+    adjustLocations();
 
     ctx.lineWidth = 5;
     animateLines(0);
+}
 
-    schedules = 5;
+function adjustLocations() {
+    let i = 1;
+    for (const time of document.getElementsByClassName('time')) {
+        time.style.position = "absolute";
+        time.style.left = '40px';
+        time.style.top = ((document.body.offsetHeight / schedules) - (time.offsetHeight / 2)) * i + 'px';
+        console.log(document.body.offsetHeight / schedules);
+        i++;
+    }
 }
 
 function animateLines(percentage) {
@@ -93,3 +104,7 @@ function getDocHeight() {
     return Math.max(body.scrollHeight, body.offsetHeight,
         html.clientHeight, html.scrollHeight, html.offsetHeight);
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    init();
+});
