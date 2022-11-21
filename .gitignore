@@ -1,7 +1,7 @@
 node_modules
 HELP.md
 .gradle
-gradle.properties
+keys.json
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/

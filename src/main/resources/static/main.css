@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap');
 
+root {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: white;
+}
+
 body {
     background: linear-gradient(177deg, rgba(20, 136, 204, 1) 0%, rgba(43, 50, 178, 1) 100%) no-repeat;
     min-height: 100vh;
     margin: 0;
 }
 
-root {
-    font-family: 'IBM Plex Sans KR', sans-serif;
-    color: white;
+object {
+    pointer-events: none;
 }
 
 #searchBar {

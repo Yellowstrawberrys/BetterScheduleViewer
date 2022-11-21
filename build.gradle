@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id 'org.springframework.experimental.aot' version '0.12.1'
+//	id 'org.springframework.experimental.aot' version '0.12.1'
 }
 
 group = 'me.yellowstrawberry'
@@ -14,29 +14,25 @@ repositories {
 	mavenCentral()
 }
 
-ext {
-	set('vaadinVersion', "23.2.7")
-}
-
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+//	implementation 'org.springframework.boot:spring-boot-starter-graphql'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.session:spring-session-core'
 	implementation 'org.json:json:20220924'
 	implementation 'com.squareup.okhttp3:okhttp:4.10.0'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+//	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
-	testImplementation 'org.springframework.graphql:spring-graphql-test'
+//	testImplementation 'org.springframework.graphql:spring-graphql-test'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
-
-tasks.named('bootBuildImage') {
-	builder = 'paketobuildpacks/builder:tiny'
-	environment = ['BP_NATIVE_IMAGE': 'true']
-}
+//
+//tasks.named('bootBuildImage') {
+//	builder = 'paketobuildpacks/builder:tiny'
+//	environment = ['BP_NATIVE_IMAGE': 'true']
+//}
