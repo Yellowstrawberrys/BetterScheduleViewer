@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <rect width="1000" height="1000" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Artboard" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#FFFFFF" fill-opacity="0" />
+    <path d="M500.001 0.000183105L0.000675757 500L500 1000L500.001 52.4481L500.001 0.000183105ZM500.001 52.4481L500 947.552L52.0005 500L500.001 52.4481Z" id="Triangle-Difference" fill="#FFFFFF" fill-rule="evenodd" stroke="none" artboard="414da8ab-26b3-4caf-8d47-8459516c1704" />
+  </g>
+</svg>

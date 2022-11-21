@@ -21,6 +21,7 @@ body {
 }
 
 .time {
+    visibility: hidden;
     text-align: right;
 }
 
@@ -36,4 +37,39 @@ body {
     color: #C8C8C8;
     font-size: 20px;
     margin: 0;
+}
+
+.scheduleContainer {
+    visibility: hidden;
+    background-color: #424242;
+    border-radius: 8px;
+    width: 550px;
+    height: 91px;
+}
+
+.scheduleTitle {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: white;
+    font-size: 30px;
+    margin: 0 0 0 10px;
+}
+
+.scheduleDescription {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: #C8C8C8;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+@keyframes splash {
+    from {
+        margin-top: 5%;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
 }

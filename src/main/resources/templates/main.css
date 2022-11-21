@@ -29,15 +29,27 @@ root {
     border: 0;
     border: #D3D3D3;
     background: #D3D3D3;
-    width: 78.5%;
     padding: 16px;
     height: 50%;
     line-height: 2.5;
     font-size: 25px;
     margin: 0;
     vertical-align: top;
+    width: 39.5%;
 }
 
+#gradeInput, #classInput {
+    border: 0;
+    border: #D3D3D3;
+    background: #D3D3D3;
+    padding: 16px;
+    height: 50%;
+    line-height: 2.5;
+    font-size: 25px;
+    margin: 0;
+    vertical-align: top;
+    width: 13.1%;
+}
 #searchButton {
     margin: 0;
     padding: 0;
@@ -80,4 +92,13 @@ root {
 
 .center {
     margin: 0 auto;
+}
+
+#date {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
 }

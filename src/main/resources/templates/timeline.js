@@ -13,7 +13,7 @@ function init() {
     canvas.height = height;
     schedules = document.getElementsByClassName('time').length;
 
-    adjustLocations();
+    // adjustLocations();
 
     ctx.lineWidth = 5;
     animateLines(0);
@@ -22,12 +22,20 @@ function init() {
 function adjustLocations() {
     let i = 1;
     for (const time of document.getElementsByClassName('time')) {
-        time.style.position = "absolute";
-        time.style.left = '40px';
-        time.style.top = ((document.body.offsetHeight / schedules) - (time.offsetHeight / 2)) * i + 'px';
-        console.log(document.body.offsetHeight / schedules);
+        time.style.marginTop = ((document.body.offsetHeight / (schedules+1)) - (time.offsetHeight / 2) - (i > 1 ? time.offsetHeight*0.4266666666666667 : 0))+ 'px';
         i++;
     }
+}
+
+function adjustObject(i, y) {
+    let time = document.getElementsByClassName('time')[i];
+    time.style = 'position: absolute; top: ' + (y-(time.offsetHeight/2)) + 'px; left: 5%;';
+    let scheduleContainer = document.getElementsByClassName('scheduleContainer')[i];
+    scheduleContainer.style = 'position: absolute; top: ' + (y-(scheduleContainer.offsetHeight/2)) + 'px;';
+    time.style.visibility = 'visible';
+    time.style.animation = '2s 1 splash';
+    scheduleContainer.style.visibility = 'visible';
+    scheduleContainer.style.animation = '2s splash';
 }
 
 function animateLines(percentage) {
@@ -47,11 +55,14 @@ function animateLines(percentage) {
 }
 
 function animateCircles(percentage) {
-    drawCircle((height/(schedules+1))*(currentScheduleLevel-1) + 15 * (currentScheduleLevel-2), percentage);
+    let y = (height/(schedules+1))*(currentScheduleLevel-1) + 15 * (currentScheduleLevel-2);
+    drawCircle(y, percentage);
     if(percentage < 1.01) {
         requestAnimationFrame(function() {
             animateCircles(percentage + 0.01);
         });
+    }else {
+        adjustObject(currentScheduleLevel-2, y/2);
     }
 }
 

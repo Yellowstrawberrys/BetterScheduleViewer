@@ -10,10 +10,10 @@
         <div id="searchBar" class="center">
             <p class="margin-0 text">학교명 입력</p>
             <form action="/information/">
-                <input id="searchInput" type="text" placeholder="학교 검색" aria-placeholder="학교 검색"><button id="searchButton">검색</button>
+                <input id="searchInput" name="SN" type="text" placeholder="학교 검색" aria-placeholder="학교 검색" required><input id="gradeInput" name="G" type="text" placeholder="학년" aria-placeholder="학년" required><input id="classInput" name="C" type="text" placeholder="반" aria-placeholder="반" required><button id="searchButton">검색</button>
             </form>
         </div>
-        <p>2022. 11. 21. (월)</p>
+        <p id="date"><object data="arrow.svg" type="image/svg+xml" aria-label="<" width="20px"></object>2022. 11. 21. (월)<object data="arrow.svg" type="image/svg+xml" aria-label=">" width="20px" style="transform: rotate(180deg);"></object></p>
         <iframe src="contents.html" class="center" id="contents"></iframe>
     </body>
 </html>
