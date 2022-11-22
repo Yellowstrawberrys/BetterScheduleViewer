@@ -7,6 +7,8 @@ function init() {
     date = new Date();
     text = document.getElementById('day');
     contents = document.getElementById('contents');
+
+    text.textContent = date.getFullYear()+'. '+(date.getMonth()+1)+'. '+date.getDate()+'. ('+dayString[date.getDay()-1]+')';
 }
 
 function left_b() {

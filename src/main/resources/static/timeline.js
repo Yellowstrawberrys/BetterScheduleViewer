@@ -44,7 +44,7 @@ function animateLines(percentage) {
     drawLine(40, ((height/(schedules+1)) - 15), dy, percentage);
     if(percentage < 1.01) {
         requestAnimationFrame(function() {
-            animateLines(percentage + 0.005);
+            animateLines(percentage + 0.01);
         });
     }else if (currentScheduleLevel < (schedules+1)) {
         currentScheduleLevel++;

@@ -6,7 +6,7 @@ root {
 }
 
 body {
-    background: linear-gradient(177deg, rgba(20, 136, 204, 1) 0%, rgba(43, 50, 178, 1) 100%) no-repeat;
+    background: #262626;
     min-height: 100vh;
     margin: 0;
 }
@@ -65,7 +65,7 @@ object {
 }
 
 #contents {
-    width: 90%;
+    width: 80vw;
     height: 60vh;
     display:block;
     border: 0;
@@ -96,6 +96,11 @@ object {
 
 .center {
     margin: 0 auto;
+}
+
+.transparent {
+    background-color: transparent;
+    border: 0;
 }
 
 #date {

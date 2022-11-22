@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, maximum-scale=0.5 user-scalable=no" />
     <title>컴시간알리미보다가 암걸릴거 같아서 만든 학교시간표 알려주는 웹사이트</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
@@ -13,6 +14,6 @@
             <input id="searchInput" name="SN" type="text" placeholder="학교 검색" aria-placeholder="학교 검색" required><input id="gradeInput" name="G" type="text" placeholder="학년" aria-placeholder="학년" required><input id="classInput" name="C" type="text" placeholder="반" aria-placeholder="반" required><button id="searchButton" onclick="search()">검색</button>
         </div>
         <p id="date"><button class="transparent" onclick="left_b()"><object id="left" data="arrow.svg" type="image/svg+xml" aria-label="<" width="20px"></object></button><l id="day">2022. 11. 21. (월)</l><button class="transparent" onclick="right_b()"><object id="right" data="arrow.svg" type="image/svg+xml" aria-label=">" width="20px" style="transform: rotate(180deg);"></object></button></p>
-        <iframe src="contents.html" class="center" id="contents"></iframe>
+        <iframe src="/contents/na" class="center" id="contents"></iframe>
     </body>
 </html>

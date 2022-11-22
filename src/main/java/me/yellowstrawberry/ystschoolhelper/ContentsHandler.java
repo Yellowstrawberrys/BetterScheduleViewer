@@ -15,6 +15,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -55,11 +56,13 @@ public class ContentsHandler {
                 <p class="timeText2">(N/A)</p>
             </div>""";
     OkHttpClient client = new OkHttpClient();
-    Map<String, String> emojis = Map.ofEntries(
+    final Map<String, String> emojis = Map.ofEntries(
             entry("국어", "\uD83D\uDCDD "),
             entry("수학", "📊 "),
             entry("사회", "🏢 "),
             entry("과학", "\uD83E\uDDEA "),
+            entry("화학", "⚗ "),
+            entry("물리", "\uD83D\uDD28 "),
             entry("영어", "🌏 "),
             entry("역사", "📜 "),
             entry("체육", "🏃 "),
@@ -69,6 +72,16 @@ public class ContentsHandler {
             entry("정보", "💻 "),
             entry("진로", "‍💼 "),
             entry("도덕", "‍❤ "),
+            entry("독일어", "\uD83C\uDDE9\uD83C\uDDEA "),
+            entry("프랑스어", "\uD83C\uDDEB\uD83C\uDDF7 "),
+            entry("러시아어", "\uD83C\uDDF7\uD83C\uDDFA "),
+            entry("스페인어", "\uD83C\uDDEA\uD83C\uDDF8 "),
+            entry("아랍어", "\uD83C\uDDE6\uD83C\uDDEA "),
+            entry("베트남어", "\uD83C\uDDFB\uD83C\uDDF3 "),
+            entry("일본어", "\uD83C\uDDEF\uD83C\uDDF5 "),
+            entry("중국어", "\uD83C\uDDE8\uD83C\uDDF3 "),
+            entry("기술", "\uD83E\uDE84 "),
+            entry("가정", "\uD83E\uDDF0 "),
             entry("바른생활", "🌳 "),
             entry("슬기로운생활", "🌳 "),
             entry("자율", "\uD83C\uDD93 ")
@@ -77,12 +90,29 @@ public class ContentsHandler {
     @RequestMapping("/")
     public String onRequest(@RequestParam("SN") String sn, @RequestParam("G") String g, @RequestParam("C") String c, @RequestParam(value = "date", required = false) String date) {
         try {
-            System.out.println("ff");
             Map<String, String> map = getInformation(sn, g, c, date);
             return format.formatted(map.get("Period"), map.get("Schedule"));
         }catch (NullPointerException e) {
             return "해당 학교는 존재하지 않습니다.";
         }
+    }
+
+    @RequestMapping("/na")
+    public String onRequestNA() {
+        return "<p>학교를 검색 해주세요^^</p>";
+    }
+
+    public String getEmoji(String key) {
+        if(emojis.containsKey(key)){
+            return emojis.get(key);
+        }else {
+            for(String st : emojis.keySet()) {
+                if(key.contains(st)){
+                    return emojis.get(st);
+                }
+            }
+        }
+        return "❓ ";
     }
 
     public Map<String, String> getInformation(String sn, String g, String c, String date) throws NullPointerException {
@@ -111,7 +141,7 @@ public class ContentsHandler {
                     : (obj.getString("SCHUL_KND_SC_NM").equals("중학교") ? "mis" : "his"))+"Timetable").getJSONObject(1).getJSONArray("row")) {
                 JSONObject jsObj = new JSONObject(jsonObject.toString());
                 String name = jsObj.getString("ITRT_CNTNT").substring((obj.getString("SCHUL_KND_SC_NM").equals("중학교") ? 1 : 0)).replaceFirst("활동", "");
-                st += format1.formatted(emojis.getOrDefault(name, "❓")+name);
+                st += format1.formatted(getEmoji(name)+name);
                 st1 += format2.formatted(jsObj.getString("PERIO"));
             }
             map.put("Schedule", st);
